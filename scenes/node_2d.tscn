@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0qderlc7v00a"]
+
+[ext_resource type="Texture2D" uid="uid://b63s7oo6bnogl" path="res://art/wheel_outline.png" id="1_wtcfe"]
+
+[node name="Wheel of Spin" type="Node2D" unique_id=602327553]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=16724669]
+texture = ExtResource("1_wtcfe")

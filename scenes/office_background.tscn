@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwdkcp5gbcpnj"]
+
+[ext_resource type="Texture2D" uid="uid://kc1wuec2l5fj" path="res://art/office_background.png" id="1_x2g4g"]
+
+[node name="Node2D" type="Node2D" unique_id=488631277]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=870415365]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=883967029]
+texture = ExtResource("1_x2g4g")
