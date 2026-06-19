@@ -14,3 +14,6 @@ position = Vector2(-27, 17)
 
 [node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
 position = Vector2(15, 12)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
+zoom = Vector2(8.295, 8.295)
