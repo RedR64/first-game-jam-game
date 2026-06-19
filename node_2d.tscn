@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://b0qderlc7v00a"]
 
-[node name="Node2D" type="Node2D" unique_id=602327553]
+[ext_resource type="Texture2D" uid="uid://bjor82mj2hg5g" path="res://wheel_outline.png" id="1_wtcfe"]
+
+[node name="Wheel of___" type="Node2D" unique_id=602327553]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=16724669]
+texture = ExtResource("1_wtcfe")
