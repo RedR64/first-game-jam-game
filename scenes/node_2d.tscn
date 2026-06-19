@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://b0qderlc7v00a"]
 
-[ext_resource type="Script" uid="uid://b5r4dn50jyya7" path="res://scenes/node_2d_wheel.gd" id="1_4dvvg"]
+[ext_resource type="Script" uid="uid://vmrwf0e6h2se" path="res://scenes/area_wheel_2d.gd" id="1_rnjyy"]
 [ext_resource type="Texture2D" uid="uid://b63s7oo6bnogl" path="res://art/wheel_outline.png" id="1_wtcfe"]
 
-[node name="Wheel of Spin" type="Node2D" unique_id=602327553]
-script = ExtResource("1_4dvvg")
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnjyy"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=16724669]
+[node name="Wheel of Spin" type="Node2D" unique_id=602327553]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=980696271]
+script = ExtResource("1_rnjyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=16724669]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=677330878]
+scale = Vector2(0.48, 0.48)
+shape = SubResource("CircleShape2D_rnjyy")
