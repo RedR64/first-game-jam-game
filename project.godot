@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="First Game Jam Game"
+run/main_scene="uid://b0qderlc7v00a"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 

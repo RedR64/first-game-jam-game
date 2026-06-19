@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kc1wuec2l5fj" path="res://art/office_background.png" id="1_x2g4g"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
+[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
 
@@ -10,3 +11,6 @@ texture = ExtResource("1_x2g4g")
 
 [node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
 position = Vector2(-27, 17)
+
+[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
+position = Vector2(15, 12)
