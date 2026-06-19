@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://kc1wuec2l5fj" path="res://art/office_background.png" id="1_x2g4g"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
+[ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
 
@@ -17,3 +18,6 @@ position = Vector2(15, 12)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
 zoom = Vector2(8.295, 8.295)
+
+[node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
+position = Vector2(-22, 8)
