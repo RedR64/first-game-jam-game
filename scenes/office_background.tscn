@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cwdkcp5gbcpnj"]
 
 [ext_resource type="Texture2D" uid="uid://kc1wuec2l5fj" path="res://art/office_background.png" id="1_x2g4g"]
+[ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=870415365]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=883967029]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=612425115]
 texture = ExtResource("1_x2g4g")
+
+[node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
+position = Vector2(-27, 17)

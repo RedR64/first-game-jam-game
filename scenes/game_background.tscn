@@ -1,0 +1,28 @@
+[gd_scene format=4 uid="uid://faylk7opc2la"]
+
+[ext_resource type="Texture2D" uid="uid://cf02epe8iqds" path="res://art/game_background.png" id="1_qebxc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qebxc"]
+texture = ExtResource("1_qebxc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.71943474, -8, 0.71943474)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.71943474, -8, 0.71943474)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.71943474, -8, 0.71943474)
+
+[sub_resource type="TileSet" id="TileSet_eg0p3"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_qebxc")
+
+[node name="Game_background" type="Node2D" unique_id=234385361]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1882612402]
+tile_map_data = PackedByteArray("AAAAAP7/AQAAAAAAAAAAAP//AQAAAAEAAAABAP7/AQABAAAAAAABAP//AQABAAEAAAACAP7/AQACAAAAAAACAP//AQACAAEAAAA=")
+tile_set = SubResource("TileSet_eg0p3")
