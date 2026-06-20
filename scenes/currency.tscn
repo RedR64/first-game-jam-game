@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c5lwn5rcojm4i"]
+
+[ext_resource type="Texture2D" uid="uid://du3psjqudtt8a" path="res://art/totalSpins.png" id="1_1abxn"]
+[ext_resource type="Texture2D" uid="uid://qnrbenus2rgr" path="res://art/0.png" id="2_hqq6v"]
+
+[node name="Node2D" type="Node2D" unique_id=1006379482]
+scale = Vector2(0.25, 0.25)
+
+[node name="Spins" type="Sprite2D" parent="." unique_id=2068303661]
+position = Vector2(25, -10)
+texture = ExtResource("1_1abxn")
+
+[node name="Number" type="Sprite2D" parent="Spins" unique_id=1019404831]
+position = Vector2(-18, 0)
+texture = ExtResource("2_hqq6v")
