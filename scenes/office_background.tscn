@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
+[ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=612425115]
 texture = ExtResource("1_x2g4g")
@@ -20,4 +22,7 @@ position = Vector2(-22, 8)
 position = Vector2(15, 12)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
-zoom = Vector2(8.295, 8.295)
+zoom = Vector2(4.36, 4.36)
+
+[node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_6wruh")]
+position = Vector2(8, -9.5)

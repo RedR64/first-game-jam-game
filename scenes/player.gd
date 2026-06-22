@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 @export var move_speed : float = 100
 @export var starting_direction : Vector2 = Vector2(0,1)
 
@@ -52,3 +53,12 @@ func _physics_process(delta):
 		#state_machine.travel("Walk")
 	#else:
 		#state_machine.travel("Idle")
+=======
+var spinVars = Spin.new;
+var health = spinVars.health;
+var defense = spinVars.defense;
+var damage = spinVars.damage;
+var agility = spinVars.agility;
+var savingThrow = spinVars.savingThrow;
+var currencyMult = spinVars.currency_multiplier;
+>>>>>>> 0193b31f064bf2d72e927152b47660db6bed7bf2
