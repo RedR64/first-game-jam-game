@@ -1,28 +1,33 @@
 [gd_scene format=3 uid="uid://cwdkcp5gbcpnj"]
 
-[ext_resource type="Texture2D" uid="uid://kc1wuec2l5fj" path="res://art/office_background.png" id="1_x2g4g"]
+[ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="1_6wruh"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
-scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=612425115]
-texture = ExtResource("1_x2g4g")
+texture = ExtResource("1_6wruh")
 
 [node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
-position = Vector2(-27, 17)
+position = Vector2(-208, 111)
+scale = Vector2(9, 9)
 
 [node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
-position = Vector2(-22, 8)
+position = Vector2(-171, 48)
+scale = Vector2(1, 1)
+script = null
 
 [node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
-position = Vector2(15, 12)
+position = Vector2(181, 69)
+scale = Vector2(8, 8)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
-zoom = Vector2(4.36, 4.36)
+position = Vector2(0, 1)
+zoom = Vector2(1.605, 1.345)
 
 [node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_6wruh")]
-position = Vector2(8, -9.5)
+position = Vector2(168, -152)
+scale = Vector2(1, 1)
