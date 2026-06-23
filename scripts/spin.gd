@@ -16,6 +16,7 @@
 ## [method Class.roll_agility] [i]0.05 to 0.10 inclusive[/i][br]
 ## [method Class.roll_saving_throw] [i]0.10 to 0.50 inclusive[/i][br]
 ## [method Class.roll_currency_multiplier] [i]0.8 to 1.2inclusive[/i][br]
+
 class_name Spin
 extends RefCounted
 
@@ -27,6 +28,7 @@ var agility: float
 var saving_throw: float
 var currency_multiplier: float
 
+#func get_health() -> float;
 
 
 
@@ -53,7 +55,8 @@ func spin() -> Spin:
 	return self
 	
 	
-	
+func get_health() -> float:
+	return self.health	
 	
 func roll_health() -> Spin:
 	health = randi() % 100 + 50
