@@ -1,4 +1,21 @@
 
+## Class/Object [i]extending RefCounted for randomly generating values[/i] [br]
+## [i]After initiating an instance, keep in mind that default values are set. These
+## Values are always the same. To randomly generate all values use the method [codeblock]Class.spin()[/codeblock][/i] [br] 
+## Attributes of the class are as follows [br]
+## [member objectName.health][br]
+## [member objectName.defense][br]
+## [member objectName.damage][br]
+## [member objectName.agility][br]
+## [member objectName.saving_throw][br]
+## [member objectName.currency_multiplier][br]
+## Methods and their assignments [br]
+## [method Class.roll_health] [i]50 to 150 health Maybe not inclusive[/i][br]
+## [method Class.roll_defense] [i]0.01 to 0.05 inclusive[/i][br]
+## [method Class.roll_damage] [i]0.05 to 0.15 inclusive[/i][br]
+## [method Class.roll_agility] [i]0.05 to 0.10 inclusive[/i][br]
+## [method Class.roll_saving_throw] [i]0.10 to 0.50 inclusive[/i][br]
+## [method Class.roll_currency_multiplier] [i]0.8 to 1.2inclusive[/i][br]
 class_name Spin
 extends RefCounted
 
