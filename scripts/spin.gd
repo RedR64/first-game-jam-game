@@ -38,7 +38,7 @@ var currency_multiplier: float
 func _init() -> void:
 	health = 100
 	defense = .03
-	damage = .10
+	damage = 10.0
 	agility = .10
 	saving_throw = .50
 	currency_multiplier = 1.0
@@ -47,6 +47,14 @@ func _init() -> void:
 	
 func spin() -> Spin:
 	roll_health()
+	roll_defense()
+	roll_damage()
+	roll_agility()
+	roll_saving_throw()
+	roll_currency_multiplier()
+	return self
+	
+func attack_spin() -> Spin:
 	roll_defense()
 	roll_damage()
 	roll_agility()
@@ -67,7 +75,7 @@ func roll_defense() -> Spin:
 	return self
 	
 func roll_damage() -> Spin:
-	damage = randf_range(0.05, 0.15)
+	damage = randf_range(8.0, 12.0)
 	return self
 
 func roll_agility() -> Spin:

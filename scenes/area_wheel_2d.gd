@@ -1,10 +1,14 @@
 extends Area2D
 
 
+var comb = Combat.new();
+var enemy = Enemy.new();
+var player = Player.new();
 			
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
+	
 	
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
@@ -12,9 +16,15 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			
 			var spin := Spin.new()
-			spin.spin()
+			spin.attack_spin()
 			
-			print("Health: ", spin.health, ", Defense: ", spin.defense, ", Damage: ", spin.damage)
+			player.attach_stats(spin)
+			
+			comb.attack(player, enemy)
+			print("Player stats")
+			print("Health: ", player.health, ", Defense: ", player.defense, ", Damage: ", player.damage)
+			print("Enemies stats")
+			print("Health: ", enemy.health, ", Defense: ", enemy.defense, ", Damage: ", enemy.damage)
 			
 			
 

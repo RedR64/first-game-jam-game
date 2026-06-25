@@ -1,3 +1,5 @@
+
+
 class_name Player
 extends CharacterBody2D
 
@@ -27,7 +29,38 @@ func _init() -> void:
 	saving_throw = spinVars.saving_throw;
 	currency_mult = spinVars.currency_multiplier;
 
-	var enemy = Enemy.new();
+	#var enemy = Enemy.new();
 
 
-	comb.attack(self, enemy);
+	#comb.battle(self, enemy)
+
+	#comb.attack(self, enemy);
+	
+	
+	## Attach stats except health
+func attach_stats(spin: Spin) -> void:
+	
+	defense = spin.defense;
+	damage = spin.damage;
+	agility = spin.agility;
+	saving_throw = spin.saving_throw;
+	currency_mult = spin.currency_multiplier;
+
+
+## Attatch all stats including health
+func attach_stats_h(spin: Spin) -> void:
+	
+	health = spin.health;
+	defense = spin.defense;
+	damage = spin.damage;
+	agility = spin.agility;
+	saving_throw = spin.saving_throw;
+	currency_mult = spin.currency_multiplier;
+	
+	
+	
+	
+	
+	
+	
+	
