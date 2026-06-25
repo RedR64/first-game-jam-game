@@ -20,7 +20,6 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 			
 			player.attach_stats(spin)
 			
-			
 			comb.attack(player, enemy)
 			print("Player stats")
 			print("Health: ", player.health, ", Defense: ", player.defense, ", Damage: ", player.damage)

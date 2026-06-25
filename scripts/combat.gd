@@ -35,7 +35,8 @@ func attack(attacker: CharacterBody2D, target: CharacterBody2D):
 func hit(attacker: CharacterBody2D, target: CharacterBody2D) -> void:
 	
 	print("The target's health before: ", target.health)
-	target.health = target.health - (attacker.damage * target.health)
+	#target.health = target.health - (attacker.damage * target.health) # This is % based damage
+	target.health = target.health - attacker.damage
 	print("The target's health after: ", target.health)
 	
 	
@@ -45,29 +46,30 @@ func _input(event):
 		if event.keycode == KEY_T:
 			print("T was pressed")
 			return true
-	
+
+## Initiate a looping battle, returns true if player wins	
 func battle(player: CharacterBody2D, npc: CharacterBody2D): # Could return a character (winner)?
-	pass
-	#var spinVar = Spin.new();
-	#
-	#
-	## Starting a battle, loop until a character's health depletes	
-	#var i = 1;
-	#while(player.health != 0 || npc.health != 0): # || selection != run
-		#
-		## alternate turns for attacks
-		#if i % 2:
-			#attack(npc, player)
-		#else:
-			#attack(player, npc)
-		#
-		#print("Stats this turn")
-		#print("Player health: ", player.health, " | NPC health: ", npc.health)
-		## Move/turn
-		#print("Press t to continue")
-		#
-		#_input(InputEventKey)
-			#
+
+	var spinVar = Spin.new();
+	
+	
+	# Starting a battle, loop until a character's health depletes	
+	var i = 1;
+	while(player.health != 0 || npc.health != 0): # || selection != run
+		
+		# alternate turns for attacks
+		if i % 2:
+			attack(npc, player)
+		else:
+			attack(player, npc)
+		
+		print("Stats this turn")
+		print("Player health: ", player.health, " | NPC health: ", npc.health)
+		# Move/turn
+		if player.health <= 0:
+			return false
+		elif npc.health <= 0:
+			return true
 			
 		
 		
