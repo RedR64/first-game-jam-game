@@ -195,7 +195,7 @@ _data = {
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ogq8d"]
 animation = &"0"
 
-[node name="Node2D" type="Node2D" unique_id=1006379482]
+[node name="Spins" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
 
 [node name="Spins" type="Sprite2D" parent="." unique_id=2068303661]

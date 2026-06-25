@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogq8d"]
 size = Vector2(48.666664, 19)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1240282853]
+[node name="enemy" type="CharacterBody2D" unique_id=1240282853]
 scale = Vector2(0.15, 0.15)
 script = ExtResource("1_md0e3")
 

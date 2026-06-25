@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://biulqevjexbty" path="res://art/player_health_bar.png" id="1_axbfd"]
 [ext_resource type="Texture2D" uid="uid://dqiqhmqq1vb2b" path="res://art/mainProtaganist.png" id="2_oil0j"]
 
-[node name="Node2D" type="Node2D" unique_id=1006379482]
+[node name="Player Health Bar" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
 
 [node name="pic_bar" type="Sprite2D" parent="." unique_id=2068303661]

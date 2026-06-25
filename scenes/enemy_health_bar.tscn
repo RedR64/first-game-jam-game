@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwoqxv4sxn1ou" path="res://art/enemy_health_bar.png" id="1_la8mi"]
 
-[node name="Node2D" type="Node2D" unique_id=1006379482]
+[node name="enemy health bar" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
 
 [node name="pic_bar" type="Sprite2D" parent="." unique_id=2068303661]
