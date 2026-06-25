@@ -47,27 +47,27 @@ func _input(event):
 			return true
 	
 func battle(player: CharacterBody2D, npc: CharacterBody2D): # Could return a character (winner)?
-	
-	var spinVar = Spin.new();
-	
-	
-	# Starting a battle, loop until a character's health depletes	
-	var i = 1;
-	while(player.health != 0 || npc.health != 0): # || selection != run
-		
-		# alternate turns for attacks
-		if i % 2:
-			attack(npc, player)
-		else:
-			attack(player, npc)
-		
-		print("Stats this turn")
-		print("Player health: ", player.health, " | NPC health: ", npc.health)
-		# Move/turn
-		print("Press t to continue")
-		
-		_input(InputEventKey)
-			
+	pass
+	#var spinVar = Spin.new();
+	#
+	#
+	## Starting a battle, loop until a character's health depletes	
+	#var i = 1;
+	#while(player.health != 0 || npc.health != 0): # || selection != run
+		#
+		## alternate turns for attacks
+		#if i % 2:
+			#attack(npc, player)
+		#else:
+			#attack(player, npc)
+		#
+		#print("Stats this turn")
+		#print("Player health: ", player.health, " | NPC health: ", npc.health)
+		## Move/turn
+		#print("Press t to continue")
+		#
+		#_input(InputEventKey)
+			#
 			
 		
 		

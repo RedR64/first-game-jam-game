@@ -54,6 +54,14 @@ func spin() -> Spin:
 	roll_currency_multiplier()
 	return self
 	
+func attack_spin() -> Spin:
+	roll_defense()
+	roll_damage()
+	roll_agility()
+	roll_saving_throw()
+	roll_currency_multiplier()
+	return self
+	
 	
 func get_health() -> float:
 	return self.health	
