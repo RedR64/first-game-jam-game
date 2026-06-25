@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuveqfei7b7ku"
-path="res://.godot/imported/shuriken.png-d34397a964be9e171bf823c9acd1d076.ctex"
+uid="uid://beogpd36m07ev"
+path="res://.godot/imported/banana.png-f8e050481eec3f2a7c268a0273b724e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/shuriken.png"
-dest_files=["res://.godot/imported/shuriken.png-d34397a964be9e171bf823c9acd1d076.ctex"]
+source_file="res://art/weapons/banana.png"
+dest_files=["res://.godot/imported/banana.png-f8e050481eec3f2a7c268a0273b724e5.ctex"]
 
 [params]
 
