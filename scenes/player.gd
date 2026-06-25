@@ -30,4 +30,6 @@ func _init() -> void:
 	var enemy = Enemy.new();
 
 
-	comb.attack(self, enemy);
+	comb.battle(self, enemy)
+
+	#comb.attack(self, enemy);
