@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
 [ext_resource type="PackedScene" uid="uid://dnh6gtdn2eg3v" path="res://scenes/player_health_bar.tscn" id="7_mhupv"]
 [ext_resource type="PackedScene" uid="uid://c632ohfltup6e" path="res://scenes/enemy.tscn" id="9_es6e5"]
+[ext_resource type="Texture2D" uid="uid://c2mb8jjkusdym" path="res://art/atk_button.png" id="10_jkyx8"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=612425115]
+[node name="bkgd" type="Sprite2D" parent="." unique_id=612425115]
 texture = ExtResource("1_6wruh")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=643867593]
+[node name="helpful_bkgd" type="Sprite2D" parent="bkgd" unique_id=643867593]
 texture = ExtResource("2_mhupv")
 
 [node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
@@ -23,7 +24,7 @@ position = Vector2(-261, 99.99999)
 scale = Vector2(8.328, 8.328)
 
 [node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
-position = Vector2(-171, 48)
+position = Vector2(-138, 46)
 scale = Vector2(1, 1)
 script = null
 
@@ -50,3 +51,8 @@ scale = Vector2(1.28, 1.28)
 [node name="enemy" parent="." unique_id=1240282853 instance=ExtResource("9_es6e5")]
 position = Vector2(132, 48)
 scale = Vector2(1, 1)
+
+[node name="atk_button" type="Sprite2D" parent="." unique_id=1205438603]
+position = Vector2(-213, 68)
+scale = Vector2(1.58, 1.58)
+texture = ExtResource("10_jkyx8")
