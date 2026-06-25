@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://juixoran667n"]
+
+[ext_resource type="Texture2D" uid="uid://b20clv22lm58m" path="res://art/little_shop_keep.png" id="1_h3yqb"]
+[ext_resource type="Texture2D" uid="uid://d12714e7frsr2" path="res://art/shopItem.png" id="2_dxhqa"]
+[ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="3_y22eq"]
+[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="4_73ty1"]
+
+[node name="ShopScreen" type="Node2D" unique_id=319007045]
+
+[node name="Little Shop Keep" type="Sprite2D" parent="." unique_id=1900298634]
+position = Vector2(159.00002, 21)
+scale = Vector2(2.49, 2.49)
+texture = ExtResource("1_h3yqb")
+
+[node name="shop_item" type="Sprite2D" parent="." unique_id=1991608575]
+position = Vector2(-171, 46)
+texture = ExtResource("2_dxhqa")
+
+[node name="shop_item2" type="Sprite2D" parent="." unique_id=2025937154]
+position = Vector2(-171, -23)
+texture = ExtResource("2_dxhqa")
+flip_v = true
+
+[node name="shop_item3" type="Sprite2D" parent="." unique_id=1249234643]
+position = Vector2(-171, -87)
+texture = ExtResource("2_dxhqa")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830918220]
+texture = ExtResource("3_y22eq")
+
+[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("4_73ty1")]
+position = Vector2(4.000005, 28)
+scale = Vector2(11.32, 11.32)
+
+[node name="shop_item4" type="Sprite2D" parent="." unique_id=1100781770]
+position = Vector2(0, -129)
+scale = Vector2(1.415, 1.415)
+texture = ExtResource("2_dxhqa")

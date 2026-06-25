@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
+[ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
+[ext_resource type="PackedScene" uid="uid://dnh6gtdn2eg3v" path="res://scenes/player_health_bar.tscn" id="7_mhupv"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
 
@@ -21,13 +23,21 @@ scale = Vector2(1, 1)
 script = null
 
 [node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
-position = Vector2(181, 69)
+position = Vector2(221, 70)
 scale = Vector2(8, 8)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
 position = Vector2(0, 1)
 zoom = Vector2(1.605, 1.345)
 
+[node name="Node2D2" parent="." unique_id=1719123935 instance=ExtResource("6_cyggf")]
+position = Vector2(172, -148)
+scale = Vector2(0.15, 0.15)
+
+[node name="Node2D3" parent="." unique_id=1072751849 instance=ExtResource("7_mhupv")]
+position = Vector2(-170, -149)
+scale = Vector2(0.15, 0.15)
+
 [node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_6wruh")]
-position = Vector2(168, -152)
-scale = Vector2(1, 1)
+position = Vector2(200, -95)
+scale = Vector2(1.28, 1.28)
