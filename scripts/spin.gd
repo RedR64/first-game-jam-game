@@ -71,7 +71,7 @@ func roll_health() -> Spin:
 	return self
 	
 func roll_defense() -> Spin:
-	defense = randf_range(0.01, 0.05)
+	defense = randf_range(0.06, 0.11)
 	return self
 	
 func roll_damage() -> Spin:

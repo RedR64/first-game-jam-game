@@ -35,8 +35,10 @@ func attack(attacker: CharacterBody2D, target: CharacterBody2D):
 func hit(attacker: CharacterBody2D, target: CharacterBody2D) -> void:
 	
 	print("The target's health before: ", target.health)
+	print("The attackers base damage: ", (attacker.damage))
+	print("The attackers damage after target's defense modifier: ", (attacker.damage - (attacker.damage * target.defense)))
 	#target.health = target.health - (attacker.damage * target.health) # This is % based damage
-	target.health = target.health - attacker.damage
+	target.health = target.health - (attacker.damage - (attacker.damage * target.defense))
 	print("The target's health after: ", target.health)
 	
 	
