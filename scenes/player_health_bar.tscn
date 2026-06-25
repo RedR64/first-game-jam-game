@@ -6,6 +6,12 @@
 [node name="Player Health Bar" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
 
+[node name="MainProtaganist" type="Sprite2D" parent="." unique_id=1953092760]
+position = Vector2(-428, 8)
+scale = Vector2(4.83, 4.83)
+texture = ExtResource("2_oil0j")
+vframes = 2
+
 [node name="pic_bar" type="Sprite2D" parent="." unique_id=2068303661]
 position = Vector2(25, -10)
 texture = ExtResource("1_axbfd")
@@ -13,10 +19,4 @@ texture = ExtResource("1_axbfd")
 [node name="health_bar" type="Sprite2D" parent="pic_bar" unique_id=1019404831]
 position = Vector2(-18, 0)
 hframes = 5
-vframes = 2
-
-[node name="MainProtaganist" type="Sprite2D" parent="." unique_id=1953092760]
-position = Vector2(-428, 20)
-scale = Vector2(4.83, 4.83)
-texture = ExtResource("2_oil0j")
 vframes = 2

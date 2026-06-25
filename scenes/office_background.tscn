@@ -1,21 +1,26 @@
 [gd_scene format=3 uid="uid://cwdkcp5gbcpnj"]
 
 [ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="1_6wruh"]
+[ext_resource type="Texture2D" uid="uid://njodd6f4tn70" path="res://art/helpful_background.png" id="2_mhupv"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
 [ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
 [ext_resource type="PackedScene" uid="uid://dnh6gtdn2eg3v" path="res://scenes/player_health_bar.tscn" id="7_mhupv"]
+[ext_resource type="PackedScene" uid="uid://c632ohfltup6e" path="res://scenes/enemy.tscn" id="9_es6e5"]
 
 [node name="Node2D" type="Node2D" unique_id=488631277]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=612425115]
 texture = ExtResource("1_6wruh")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=643867593]
+texture = ExtResource("2_mhupv")
+
 [node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
-position = Vector2(-208, 111)
-scale = Vector2(9, 9)
+position = Vector2(-261, 99.99999)
+scale = Vector2(8.328, 8.328)
 
 [node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
 position = Vector2(-171, 48)
@@ -41,3 +46,7 @@ scale = Vector2(0.15, 0.15)
 [node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_6wruh")]
 position = Vector2(200, -95)
 scale = Vector2(1.28, 1.28)
+
+[node name="enemy" parent="." unique_id=1240282853 instance=ExtResource("9_es6e5")]
+position = Vector2(132, 48)
+scale = Vector2(1, 1)
