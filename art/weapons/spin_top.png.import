@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beogpd36m07ev"
-path="res://.godot/imported/banana.png-e128ad44eeab3d585619ff8b772cc568.ctex"
+uid="uid://ir0u4colhngo"
+path="res://.godot/imported/spin_top.png-b11ba07bfdd84e7393c007969c003014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/banana.png"
-dest_files=["res://.godot/imported/banana.png-e128ad44eeab3d585619ff8b772cc568.ctex"]
+source_file="res://art/weapons/spin_top.png"
+dest_files=["res://.godot/imported/spin_top.png-b11ba07bfdd84e7393c007969c003014.ctex"]
 
 [params]
 
