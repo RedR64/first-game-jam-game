@@ -1,15 +1,49 @@
 [gd_scene format=3 uid="uid://bx026h02fh7ov"]
 
-[ext_resource type="Texture2D" uid="uid://dwoqxv4sxn1ou" path="res://art/enemy_health_bar.png" id="1_la8mi"]
+[ext_resource type="Texture2D" uid="uid://dqiqhmqq1vb2b" path="res://art/mainProtaganist.png" id="1_sce1c"]
+[ext_resource type="Texture2D" uid="uid://biulqevjexbty" path="res://art/player_health_bar.png" id="2_uy4ig"]
+[ext_resource type="Texture2D" uid="uid://iyxbbnmulvjs" path="res://art/empty enemy health bar.png" id="3_bywsx"]
+[ext_resource type="Texture2D" uid="uid://c18fwhy2bxyho" path="res://art/enemy_health_bar_frame.png" id="4_tqsop"]
+[ext_resource type="Texture2D" uid="uid://bijpd3owy554m" path="res://art/full_enemy_health_bar.png" id="5_lug8y"]
+[ext_resource type="Texture2D" uid="uid://l3gfw3u62dk8" path="res://art/enemy_shield_bar_empty.png" id="6_htvug"]
+[ext_resource type="Texture2D" uid="uid://cbo66h4cld74h" path="res://art/enemy_shield_bar_frame.png" id="7_eiinm"]
+[ext_resource type="Texture2D" uid="uid://bnn6y7f5ma6gf" path="res://art/shield_bar_enemy_full.png" id="8_p43ok"]
 
-[node name="enemy health bar" type="Node2D" unique_id=1006379482]
+[node name="Player Health Bar" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
 
-[node name="pic_bar" type="Sprite2D" parent="." unique_id=2068303661]
-position = Vector2(25, -10)
-texture = ExtResource("1_la8mi")
-
-[node name="health_bar" type="Sprite2D" parent="pic_bar" unique_id=1019404831]
-position = Vector2(-18, 0)
-hframes = 5
+[node name="MainProtaganist" type="Sprite2D" parent="." unique_id=1953092760]
+position = Vector2(476, 12)
+scale = Vector2(4.83, 4.83)
+texture = ExtResource("1_sce1c")
+flip_h = true
 vframes = 2
+
+[node name="pic_bar" type="Sprite2D" parent="MainProtaganist" unique_id=2068303661]
+position = Vector2(-0.8281555, -3.3126295)
+scale = Vector2(0.20703934, 0.20703934)
+texture = ExtResource("2_uy4ig")
+flip_h = true
+hframes = 4
+
+[node name="Health Bar" type="TextureProgressBar" parent="." unique_id=868988621]
+offset_left = -584.0
+offset_top = -160.0
+offset_right = 616.0
+offset_bottom = 140.0
+fill_mode = 1
+texture_under = ExtResource("3_bywsx")
+texture_over = ExtResource("4_tqsop")
+texture_progress = ExtResource("5_lug8y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield Bar" type="TextureProgressBar" parent="." unique_id=556579088]
+offset_left = -580.0
+offset_top = -160.0
+offset_right = 620.0
+offset_bottom = 140.0
+fill_mode = 1
+texture_under = ExtResource("6_htvug")
+texture_over = ExtResource("7_eiinm")
+texture_progress = ExtResource("8_p43ok")
+metadata/_edit_use_anchors_ = true
