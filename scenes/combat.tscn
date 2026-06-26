@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dp3yl8pt2a33a"]
+
+[ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="1_aic3r"]
+[ext_resource type="PackedScene" uid="uid://c632ohfltup6e" path="res://scenes/enemy.tscn" id="2_4l26h"]
+[ext_resource type="Texture2D" uid="uid://beogpd36m07ev" path="res://art/weapons/banana.png" id="3_p71o4"]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_osi8t"]
+
+[sub_resource type="Animation" id="Animation_beodu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(217, -180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(487, -178)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weapon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(198, -213)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("weapon:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("weapon:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pi3ub"]
+resource_name = "attack"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(217, -180), Vector2(198, -180), Vector2(217, -180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2.5333333, 2.9666665, 3.4666665, 3.8666666, 4.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(487, -178), Vector2(484, -178), Vector2(487, -178), Vector2(489, -178), Vector2(487, -178), Vector2(487, -178), Vector2(505, -193), Vector2(517, -178), Vector2(487, -178)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weapon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.0333333, 1.5333333, 2.0333333, 2.5333333, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(198, -213), Vector2(179, -213), Vector2(198, -213), Vector2(262, -253), Vector2(351, -272), Vector2(426, -251), Vector2(489, -208)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("weapon:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 1.2666667, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.9913470151327793, 6.283185307179586]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("weapon:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8sr6x"]
+_data = {
+&"RESET": SubResource("Animation_beodu"),
+&"attack": SubResource("Animation_pi3ub")
+}
+
+[node name="combat" type="Node2D" unique_id=1228185412]
+
+[node name="player" parent="." unique_id=1240282853 instance=ExtResource("1_aic3r")]
+position = Vector2(217, -180)
+scale = Vector2(1, 1)
+
+[node name="enemy" parent="." unique_id=1057928165 instance=ExtResource("2_4l26h")]
+position = Vector2(487, -178)
+scale = Vector2(1, 1)
+
+[node name="weapon" type="Sprite2D" parent="." unique_id=1196901197]
+position = Vector2(198, -213)
+texture = ExtResource("3_p71o4")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=671787299]
+tree_root = SubResource("AnimationRootNode_osi8t")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1317303951]
+libraries/ = SubResource("AnimationLibrary_8sr6x")

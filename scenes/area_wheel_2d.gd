@@ -4,14 +4,25 @@ extends Area2D
 var comb = Combat.new();
 var enemy = Enemy.new();
 var player = Player.new();
-var turn = load("res://scenes/TurnQueue.tscn").instantiate()
-#var turn = TurnQueue.instantiate();
+var turn_queue_scene = preload("res://scenes/TurnQueue.tscn").instantiate()
+var turn = TurnQueue.new();
 var node_data: Array
+
+const NUM_ENEMIES = 2
 			
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
 	
+	#get_tree().root.add_child(turn_queue_scene)
+	
+	#$TurnQueue.add_child($TurnQueue/player) # Add player first
+	
+	#for i in range(NUM_ENEMIES):
+		#$TurnQueue.add_child($TurnQueue/enemy.duplicate())
+	
+	
+
 	
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:

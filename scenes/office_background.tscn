@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwdkcp5gbcpnj"]
 
 [ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="1_6wruh"]
+[ext_resource type="Script" uid="uid://bun81aht40sqc" path="res://scenes/office_background.gd" id="1_rt46k"]
 [ext_resource type="Texture2D" uid="uid://njodd6f4tn70" path="res://art/helpful_background.png" id="2_mhupv"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
@@ -12,7 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://c2mb8jjkusdym" path="res://art/atk_button.png" id="10_jkyx8"]
 [ext_resource type="PackedScene" uid="uid://ppmout52lt7l" path="res://scenes/TurnQueue.tscn" id="11_rt46k"]
 
-[node name="Node2D" type="Node2D" unique_id=488631277]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkyx8"]
+size = Vector2(76, 26)
+
+[node name="combat_scene" type="Node2D" unique_id=488631277]
+script = ExtResource("1_rt46k")
 
 [node name="bkgd" type="Sprite2D" parent="." unique_id=612425115]
 texture = ExtResource("1_6wruh")
@@ -23,6 +28,18 @@ texture = ExtResource("2_mhupv")
 [node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
 position = Vector2(-261, 99.99999)
 scale = Vector2(8.328, 8.328)
+
+[node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
+position = Vector2(-138, 46)
+scale = Vector2(1, 1)
+script = null
+
+[node name="Shop Test" type="Area2D" parent="." unique_id=1830131635]
+position = Vector2(-188, 191)
+
+[node name="Shop Button" type="CollisionShape2D" parent="Shop Test" unique_id=1646268389]
+position = Vector2(-25, -123)
+shape = SubResource("RectangleShape2D_jkyx8")
 
 [node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
 position = Vector2(221, 70)
@@ -51,7 +68,7 @@ texture = ExtResource("10_jkyx8")
 
 [node name="TurnQueue" parent="." unique_id=376869300 instance=ExtResource("11_rt46k")]
 
-[node name="player" parent="TurnQueue" unique_id=1977316316 instance=ExtResource("4_sbngn")]
+[node name="player" parent="TurnQueue" unique_id=870248354 instance=ExtResource("4_sbngn")]
 position = Vector2(-138, 46)
 scale = Vector2(1, 1)
 script = null
@@ -59,3 +76,9 @@ script = null
 [node name="enemy" parent="TurnQueue" unique_id=1240282853 instance=ExtResource("9_es6e5")]
 position = Vector2(132, 48)
 scale = Vector2(1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=824021011]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="input_event" from="Shop Test" to="." method="_on_shop_input_event"]

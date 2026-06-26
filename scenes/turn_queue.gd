@@ -24,21 +24,21 @@ func _ready() -> void:
 		#play_turn() # For testing
 	
 	
-#func _init() -> void:
-	#
-	#nodes_children = self.get_children()
-	#active_character = self.get_child(0)
-	#
+func _init() -> void:
+	
+	nodes_children = self.get_children()
+	active_character = self.get_child(0)
+	
 	#var active_character = active_c
 	#var nodes_children = nodes_c
-	
+	#
 	#node = get_child(0)
 	#add_child(node)
 	
-	#active_character = get_children()
-	#print("Children: ", active_character)
+	active_character = get_children()
+	print("Children: ", active_character)
 	
-#func _instantiate():
+#func instantiate():
 	#nodes_children = get_children()
 	#active_character = get_child(0)
 	

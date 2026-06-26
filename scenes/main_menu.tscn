@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c3ivcme845aoh"]
+
+[ext_resource type="Script" uid="uid://dxtr14pnwehne" path="res://scenes/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c656lif22brit" path="res://art/main menu.png" id="2_bqqt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogq8d"]
+size = Vector2(158, 40.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg0p3"]
+size = Vector2(142, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxnf"]
+size = Vector2(158, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqqt6"]
+size = Vector2(142, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu84c"]
+size = Vector2(37, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ln24"]
+size = Vector2(36, 43)
+
+[node name="Main Menu" type="Node2D" unique_id=732754059]
+script = ExtResource("1_ekxnf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995912322]
+position = Vector2(-1, 1)
+texture = ExtResource("2_bqqt6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=296122127]
+position = Vector2(0, 1)
+zoom = Vector2(1.605, 1.345)
+
+[node name="Play" type="Area2D" parent="." unique_id=2083208858]
+position = Vector2(-94, 95.5)
+
+[node name="Play Button" type="CollisionShape2D" parent="Play" unique_id=15156716]
+position = Vector2(-1, 0.875)
+shape = SubResource("RectangleShape2D_ogq8d")
+
+[node name="Quit" type="Area2D" parent="." unique_id=1530416701]
+position = Vector2(-94, 95.5)
+
+[node name="Quit Button" type="CollisionShape2D" parent="Quit" unique_id=2047344369]
+position = Vector2(189, 60)
+shape = SubResource("RectangleShape2D_eg0p3")
+
+[node name="Accessories" type="Area2D" parent="." unique_id=58828806]
+position = Vector2(-188, 191)
+
+[node name="Accessories Button" type="CollisionShape2D" parent="Accessories" unique_id=858176006]
+position = Vector2(93, -35.5)
+shape = SubResource("RectangleShape2D_ekxnf")
+
+[node name="Settings" type="Area2D" parent="." unique_id=627238500]
+position = Vector2(-188, 191)
+
+[node name="Settings Button" type="CollisionShape2D" parent="Settings" unique_id=2132320503]
+position = Vector2(283, -94.5)
+shape = SubResource("RectangleShape2D_bqqt6")
+
+[node name="Help" type="Area2D" parent="." unique_id=1054154300]
+position = Vector2(-188, 191)
+
+[node name="Help Button" type="CollisionShape2D" parent="Help" unique_id=1493034834]
+position = Vector2(377.5, -94.5)
+shape = SubResource("RectangleShape2D_wu84c")
+
+[node name="Flip" type="Area2D" parent="." unique_id=1261853068]
+position = Vector2(-188, 191)
+
+[node name="Flip Button" type="CollisionShape2D" parent="Flip" unique_id=918173135]
+position = Vector2(377, -35.5)
+shape = SubResource("RectangleShape2D_8ln24")
+
+[connection signal="input_event" from="Play" to="." method="_on_play_input_event"]
+[connection signal="input_event" from="Quit" to="." method="_on_quit_input_event"]
+[connection signal="input_event" from="Accessories" to="." method="_on_accessories_input_event"]
+[connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
+[connection signal="input_event" from="Help" to="." method="_on_help_input_event"]
+[connection signal="input_event" from="Flip" to="." method="_on_flip_input_event"]
