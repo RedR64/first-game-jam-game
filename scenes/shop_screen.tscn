@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://juixoran667n"]
 
 [ext_resource type="Texture2D" uid="uid://b20clv22lm58m" path="res://art/little_shop_keep.png" id="1_h3yqb"]
+[ext_resource type="Script" uid="uid://df3vq630qrvhf" path="res://scenes/shop_screen.gd" id="1_rutho"]
 [ext_resource type="Texture2D" uid="uid://d12714e7frsr2" path="res://art/shopItem.png" id="2_dxhqa"]
 [ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="3_y22eq"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="4_73ty1"]
@@ -11,6 +12,15 @@
 size = Vector2(76, 26)
 
 [node name="ShopScreen" type="Node2D" unique_id=319007045]
+script = ExtResource("1_rutho")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=586959798]
+offset_left = -261.0
+offset_top = -179.0
+offset_right = 273.0
+offset_bottom = 115.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.6745098)
 
 [node name="Little Shop Keep" type="Sprite2D" parent="." unique_id=1900298634]
 position = Vector2(169, 17)

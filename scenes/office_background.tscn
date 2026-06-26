@@ -81,4 +81,5 @@ scale = Vector2(1, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="input_event" from="Shop Test" to="." method="_on_shop_input_event"]
+
+[connection signal="input_event" from="Shop Test" to="." method="_on_shop_test_input_event"]
