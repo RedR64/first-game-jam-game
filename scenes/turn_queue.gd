@@ -46,7 +46,9 @@ func _init() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var health = 1
+	if health <= 0:
+		$shop_button.visible = true
 
 
 func play_turn(player: CharacterBody2D, npc: CharacterBody2D): # The state, (0 to n) for however many nodes in the TurnQueue scene

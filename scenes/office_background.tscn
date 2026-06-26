@@ -11,10 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dnh6gtdn2eg3v" path="res://scenes/player_health_bar.tscn" id="7_mhupv"]
 [ext_resource type="PackedScene" uid="uid://c632ohfltup6e" path="res://scenes/enemy.tscn" id="9_es6e5"]
 [ext_resource type="Texture2D" uid="uid://c2mb8jjkusdym" path="res://art/atk_button.png" id="10_jkyx8"]
+[ext_resource type="Texture2D" uid="uid://bhgsu2cjfen80" path="res://art/shop_button.png" id="11_a13et"]
 [ext_resource type="PackedScene" uid="uid://ppmout52lt7l" path="res://scenes/TurnQueue.tscn" id="11_rt46k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkyx8"]
-size = Vector2(76, 26)
+size = Vector2(96, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogq8d"]
+radius = 25.079872
 
 [node name="combat_scene" type="Node2D" unique_id=488631277]
 script = ExtResource("1_rt46k")
@@ -26,20 +30,13 @@ texture = ExtResource("1_6wruh")
 texture = ExtResource("2_mhupv")
 
 [node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
-position = Vector2(-261, 99.99999)
+position = Vector2(-261, 101.99999)
 scale = Vector2(8.328, 8.328)
 
 [node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
 position = Vector2(-138, 46)
 scale = Vector2(1, 1)
 script = null
-
-[node name="Shop Test" type="Area2D" parent="." unique_id=1830131635]
-position = Vector2(-188, 191)
-
-[node name="Shop Button" type="CollisionShape2D" parent="Shop Test" unique_id=1646268389]
-position = Vector2(-25, -123)
-shape = SubResource("RectangleShape2D_jkyx8")
 
 [node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
 position = Vector2(221, 70)
@@ -66,6 +63,18 @@ position = Vector2(-213, 68)
 scale = Vector2(1.58, 1.58)
 texture = ExtResource("10_jkyx8")
 
+[node name="shop_button" type="Sprite2D" parent="." unique_id=1933983502]
+visible = false
+position = Vector2(1, -16)
+texture = ExtResource("11_a13et")
+
+[node name="Shop Test" type="Area2D" parent="shop_button" unique_id=1830131635]
+position = Vector2(-189, 207)
+
+[node name="Shop Button" type="CollisionShape2D" parent="shop_button/Shop Test" unique_id=1646268389]
+position = Vector2(189, -207)
+shape = SubResource("RectangleShape2D_jkyx8")
+
 [node name="TurnQueue" parent="." unique_id=376869300 instance=ExtResource("11_rt46k")]
 
 [node name="player" parent="TurnQueue" unique_id=870248354 instance=ExtResource("4_sbngn")]
@@ -77,4 +86,10 @@ script = null
 position = Vector2(132, 48)
 scale = Vector2(1, 1)
 
-[connection signal="input_event" from="Shop Test" to="." method="_on_shop_test_input_event"]
+[node name="Mechanical Pencil Sharpener" type="Area2D" parent="." unique_id=148305824]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanical Pencil Sharpener" unique_id=250979882]
+position = Vector2(213, 194)
+shape = SubResource("CircleShape2D_ogq8d")
+
+[connection signal="input_event" from="shop_button/Shop Test" to="." method="_on_shop_test_input_event"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnh6gtdn2eg3v"]
 
-[ext_resource type="Texture2D" uid="uid://biulqevjexbty" path="res://art/player_health_bar.png" id="1_axbfd"]
+[ext_resource type="Texture2D" uid="uid://cokbk25rwx7ig" path="res://art/player_health_bar.png" id="1_axbfd"]
 [ext_resource type="Texture2D" uid="uid://dqiqhmqq1vb2b" path="res://art/mainProtaganist.png" id="2_oil0j"]
 [ext_resource type="Texture2D" uid="uid://c186p2t8jjgqj" path="res://art/empty health bar.png" id="3_04gef"]
 [ext_resource type="Texture2D" uid="uid://wyfk70w33is8" path="res://art/health_bar_frame.png" id="4_38th7"]
@@ -9,30 +9,31 @@
 [ext_resource type="Texture2D" uid="uid://cqo626n7li0a5" path="res://art/shield_bar_frame.png" id="7_cjfs6"]
 [ext_resource type="Texture2D" uid="uid://d1ghfwvqkl85f" path="res://art/shield_bar_full.png" id="8_5q0fd"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_04gef"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
 [node name="Player Health Bar" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
 
 [node name="MainProtaganist" type="Sprite2D" parent="." unique_id=1953092760]
+z_index = 10
 position = Vector2(-428, 8)
 scale = Vector2(4.83, 4.83)
 texture = ExtResource("2_oil0j")
 vframes = 2
 
-[node name="pic_bar" type="Sprite2D" parent="." unique_id=2068303661]
-position = Vector2(-432, -8)
+[node name="pic_bar" type="Sprite2D" parent="MainProtaganist" unique_id=2068303661]
+z_index = 10
+position = Vector2(-0.8281555, -3.3126295)
+scale = Vector2(0.20703934, 0.20703934)
 texture = ExtResource("1_axbfd")
-hframes = 4
-
-[node name="health_bar" type="Sprite2D" parent="pic_bar" unique_id=1019404831]
-position = Vector2(-18, 0)
-hframes = 5
-vframes = 2
 
 [node name="Health Bar" type="TextureProgressBar" parent="." unique_id=142638204]
-offset_left = -584.0
-offset_top = -160.0
-offset_right = 616.0
-offset_bottom = 140.0
+offset_left = -275.9999
+offset_top = -155.99998
+offset_right = 924.0001
+offset_bottom = 144.00002
 rotation = -0.0005527867
 fill_mode = 1
 texture_under = ExtResource("3_04gef")
@@ -41,9 +42,13 @@ texture_progress = ExtResource("5_ktmho")
 metadata/_edit_use_anchors_ = true
 
 [node name="Shield Bar" type="TextureProgressBar" parent="." unique_id=704568194]
-offset_left = -580.0
+anchors_preset = -1
+anchor_left = 0.24999997
+anchor_top = 0.00055278616
+anchor_bottom = 0.00055277505
+offset_left = -280.0
 offset_top = -160.0
-offset_right = 620.0
+offset_right = 920.0
 offset_bottom = 140.0
 rotation = -0.0005527867
 fill_mode = 1
@@ -51,3 +56,11 @@ texture_under = ExtResource("6_hmdf3")
 texture_over = ExtResource("7_cjfs6")
 texture_progress = ExtResource("8_5q0fd")
 metadata/_edit_use_anchors_ = true
+
+[node name="player_name" type="Label" parent="." unique_id=481794155]
+offset_left = -260.0
+offset_top = -100.0
+offset_right = 444.0
+offset_bottom = -12.0
+text = "You"
+label_settings = SubResource("LabelSettings_04gef")
