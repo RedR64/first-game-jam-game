@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c632ohfltup6e" path="res://scenes/enemy.tscn" id="9_es6e5"]
 [ext_resource type="Texture2D" uid="uid://c2mb8jjkusdym" path="res://art/atk_button.png" id="10_jkyx8"]
 
-[node name="Node2D" type="Node2D" unique_id=488631277]
+[node name="combat_scene" type="Node2D" unique_id=488631277]
 
 [node name="bkgd" type="Sprite2D" parent="." unique_id=612425115]
 texture = ExtResource("1_6wruh")
