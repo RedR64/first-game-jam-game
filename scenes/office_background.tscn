@@ -77,9 +77,10 @@ script = null
 position = Vector2(132, 48)
 scale = Vector2(1, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=824021011]
-offset_right = 40.0
-offset_bottom = 40.0
-
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1235713368]
+offset_left = -211.0
+offset_top = -150.0
+offset_right = -102.0
+offset_bottom = -142.0
 
 [connection signal="input_event" from="Shop Test" to="." method="_on_shop_test_input_event"]
