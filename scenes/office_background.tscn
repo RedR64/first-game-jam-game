@@ -69,8 +69,13 @@ position = Vector2(-213, 68)
 scale = Vector2(1.58, 1.58)
 texture = ExtResource("10_jkyx8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=824021011]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=679055872]
+visible = false
+offset_left = -261.0
+offset_top = -179.0
+offset_right = 273.0
+offset_bottom = 115.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.6745098)
 
-[connection signal="input_event" from="Shop Test" to="." method="_on_shop_input_event"]
+[connection signal="input_event" from="Shop Test" to="." method="_on_shop_test_input_event"]
