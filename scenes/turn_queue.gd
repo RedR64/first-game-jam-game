@@ -3,7 +3,9 @@ class_name TurnQueue
 
 var active_character
 var nodes_children
-var new_index: int
+var new_index = 0
+
+var comb = Combat.new()
 
 #enum State {START, PLAYER_TURN, ENEMY_TURN, WIN, LOSE}
 
@@ -11,25 +13,34 @@ var new_index: int
 func _ready() -> void:
 	nodes_children = get_children()
 	active_character = get_child(0)
-	new_index = 0
+	
+	#var tree_node = preload("res://scenes/office_background.tscn")
+	#add_child(tree_node)
+	#tree_node.recieve_node_data(nodes_children)
+	
 	print("Children: ", nodes_children)
 	
-	for i in range(2):
-		play_turn() # For testing
+	#for i in range(2):
+		#play_turn() # For testing
 	
 	
-func _init() -> void:
-	pass
+#func _init() -> void:
+	#
+	#nodes_children = self.get_children()
 	#active_character = self.get_child(0)
-	
-	#var active_character: Node
-	#var nodes_children: Array[Node]
+	#
+	#var active_character = active_c
+	#var nodes_children = nodes_c
 	
 	#node = get_child(0)
 	#add_child(node)
 	
 	#active_character = get_children()
 	#print("Children: ", active_character)
+	
+#func _instantiate():
+	#nodes_children = get_children()
+	#active_character = get_child(0)
 	
 	
 
@@ -38,16 +49,53 @@ func _process(delta: float) -> void:
 	pass
 
 
-func play_turn():
+func play_turn(player: CharacterBody2D, npc: CharacterBody2D): # The state, (0 to n) for however many nodes in the TurnQueue scene
 	#await active_character.play_turn() # Probably do this later somewhere else?
+	print("Get children in play_turn: ", get_children(true))
 	print("Child count: ", get_child_count())
 	print("Old index: ", get_index())
 	print("Old Active: ", active_character)
 	#var new_index: int = active_character.get_index() + 1
 	
-	new_index = new_index + 1
-	active_character = get_child(new_index)
-	print("Completed turn, new character index: ", new_index, " | Active: ", active_character)
+	
+	## If 0, then it's the players turn, everything else is an enemy.
+	## Need params (the character params)
+	
+	if get_index() == 0:
+		## Player turn logic
+		
+		comb.attack(player, npc)
+		
+		
+		if new_index == get_child_count() -1:
+			new_index =0
+			return
+		else:
+			new_index = new_index + 1
+			active_character = get_child(new_index)
+			print("Completed turn, new character index: ", new_index, " | Active: ", active_character)
+		
+	else:
+		#Enemy logic
+		
+		
+		comb.attack(npc, player)
+		
+		if new_index == get_child_count() -1:
+			new_index = 0
+			return
+		else:
+			new_index = new_index + 1
+			active_character = get_child(new_index)
+			print("Completed turn, new character index: ", new_index, " | Active: ", active_character)
+	
+	
+	
+	
+	
+	
+	
+
 
 
 func main():

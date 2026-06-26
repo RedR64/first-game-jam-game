@@ -1,21 +1,6 @@
 [gd_scene format=3 uid="uid://ppmout52lt7l"]
 
 [ext_resource type="Script" uid="uid://cbc1t50kp6b35" path="res://scenes/turn_queue.gd" id="1_2gfxo"]
-[ext_resource type="Texture2D" uid="uid://rnlas32lfxiw" path="res://icon.svg" id="2_sxdd7"]
 
 [node name="TurnQueue" type="Node2D" unique_id=376869300]
 script = ExtResource("1_2gfxo")
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=636895096]
-position = Vector2(101, 97)
-texture = ExtResource("2_sxdd7")
-
-[node name="Icon2" type="Sprite2D" parent="." unique_id=773380702]
-position = Vector2(202, 194)
-texture = ExtResource("2_sxdd7")
-
-[node name="Icon3" type="Sprite2D" parent="." unique_id=310773979]
-position = Vector2(303, 291)
-texture = ExtResource("2_sxdd7")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2106296165]
