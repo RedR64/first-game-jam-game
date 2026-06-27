@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cwdkcp5gbcpnj"]
+
+[ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="1_6wruh"]
+[ext_resource type="Script" uid="uid://bun81aht40sqc" path="res://scenes/office_background.gd" id="1_rt46k"]
+[ext_resource type="Texture2D" uid="uid://njodd6f4tn70" path="res://art/helpful_background.png" id="2_mhupv"]
+[ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
+[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
+[ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
+[ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
+[ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
+[ext_resource type="PackedScene" uid="uid://dnh6gtdn2eg3v" path="res://scenes/player_health_bar.tscn" id="7_mhupv"]
+[ext_resource type="PackedScene" uid="uid://c632ohfltup6e" path="res://scenes/enemy.tscn" id="9_es6e5"]
+[ext_resource type="Texture2D" uid="uid://c2mb8jjkusdym" path="res://art/atk_button.png" id="10_jkyx8"]
+[ext_resource type="Texture2D" uid="uid://bhgsu2cjfen80" path="res://art/shop_button.png" id="11_a13et"]
+[ext_resource type="PackedScene" uid="uid://ppmout52lt7l" path="res://scenes/TurnQueue.tscn" id="11_rt46k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a13et"]
+size = Vector2(76, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkyx8"]
+size = Vector2(96, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogq8d"]
+radius = 25.079872
+
+[node name="combat_scene" type="Node2D" unique_id=488631277]
+script = ExtResource("1_rt46k")
+
+[node name="bkgd" type="Sprite2D" parent="." unique_id=612425115]
+texture = ExtResource("1_6wruh")
+
+[node name="helpful_bkgd" type="Sprite2D" parent="bkgd" unique_id=643867593]
+texture = ExtResource("2_mhupv")
+
+[node name="Game_background" parent="." unique_id=234385361 instance=ExtResource("2_vrc0d")]
+position = Vector2(-261, 101.99999)
+scale = Vector2(8.328, 8.328)
+
+[node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
+position = Vector2(-138, 46)
+scale = Vector2(1, 1)
+script = null
+
+[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
+position = Vector2(221, 70)
+scale = Vector2(8, 8)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
+position = Vector2(0, 1)
+zoom = Vector2(1.605, 1.345)
+
+[node name="Node2D2" parent="." unique_id=1719123935 instance=ExtResource("6_cyggf")]
+position = Vector2(172, -148)
+scale = Vector2(0.15, 0.15)
+
+[node name="Node2D3" parent="." unique_id=1072751849 instance=ExtResource("7_mhupv")]
+position = Vector2(-170, -149)
+scale = Vector2(0.15, 0.15)
+
+[node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_6wruh")]
+position = Vector2(200, -95)
+scale = Vector2(1.28, 1.28)
+
+[node name="atk_button" type="Sprite2D" parent="." unique_id=1205438603]
+position = Vector2(-213, 68)
+scale = Vector2(1.58, 1.58)
+texture = ExtResource("10_jkyx8")
+
+[node name="atk_button" type="Area2D" parent="atk_button" unique_id=1529777998]
+position = Vector2(15.822777, 77.8481)
+scale = Vector2(0.6329114, 0.6329114)
+
+[node name="Atk Button" type="CollisionShape2D" parent="atk_button/atk_button" unique_id=678230390]
+position = Vector2(-24.999985, -123)
+shape = SubResource("RectangleShape2D_a13et")
+
+[node name="shop_button" type="Sprite2D" parent="." unique_id=1933983502]
+position = Vector2(1, -16)
+texture = ExtResource("11_a13et")
+
+[node name="Shop Test" type="Area2D" parent="shop_button" unique_id=1830131635]
+position = Vector2(-189, 207)
+
+[node name="Shop Button" type="CollisionShape2D" parent="shop_button/Shop Test" unique_id=1646268389]
+position = Vector2(189, -207)
+shape = SubResource("RectangleShape2D_jkyx8")
+
+[node name="TurnQueue" parent="." unique_id=376869300 node_paths=PackedStringArray("player", "enemies", "attack_button") instance=ExtResource("11_rt46k")]
+player = NodePath("player")
+enemies = [NodePath("enemy")]
+attack_button = NodePath("../atk_button/atk_button")
+
+[node name="player" parent="TurnQueue" unique_id=870248354 instance=ExtResource("4_sbngn")]
+position = Vector2(-138, 46)
+scale = Vector2(1, 1)
+script = null
+
+[node name="enemy" parent="TurnQueue" unique_id=1240282853 instance=ExtResource("9_es6e5")]
+position = Vector2(132, 48)
+scale = Vector2(1, 1)
+
+[node name="Mechanical Pencil Sharpener" type="Area2D" parent="." unique_id=148305824]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanical Pencil Sharpener" unique_id=250979882]
+position = Vector2(213, 194)
+shape = SubResource("CircleShape2D_ogq8d")
+
+[connection signal="input_event" from="shop_button/Shop Test" to="." method="_on_shop_test_input_event"]

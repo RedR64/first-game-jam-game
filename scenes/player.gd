@@ -61,6 +61,11 @@ func attach_stats_h(spin: Spin) -> void:
 	
 	
 	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_G:
+			health -= 10.0
+			print("Player health: ", health)
 	
 	
 	
