@@ -83,7 +83,6 @@ scale = Vector2(1.415, 1.415)
 texture = ExtResource("2_dxhqa")
 
 [node name="focused_shop_item1" parent="focused_shop_item" unique_id=1187817310 instance=ExtResource("7_rutho")]
-visible = false
 position = Vector2(-1, 0)
 
 [node name="focused_shop_item2" parent="focused_shop_item" unique_id=831540327 instance=ExtResource("7_rutho")]

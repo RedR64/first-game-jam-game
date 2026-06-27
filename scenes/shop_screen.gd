@@ -6,34 +6,45 @@ var topText = ["Banana","Black Hole","Cursor","Pocket Knife","Milky Way","A Swor
 var bottomText = ["From your lunch box... wait...","Now how does a child get a hold of this?!","Uh...","","A galaxy that fits in the palm of my hand..?"
 ,"A sword from a popular game","Normal Office Item","You want me to throw this..?","Now why does a child have such a dangerous weapon?","Your average spinner","Tape, but rolls"]
 
-func _init() -> void:
+func _ready() -> void:
 	shop_item_set()
 	
 	
 	
 func shop_item_set():
 	var shop_item_num_one = randi_range(0, 10)
-	print(picture[shop_item_num_one] + ":" + str(shop_item_num_one))
-	print(topText[shop_item_num_one])
-	print(bottomText[shop_item_num_one])
-	#var texture = load("res://art/weapons/"+picture[shop_item_num_one]+".png")
-	#$shop_item1/shop_item1/Weapon.texture = texture
-	#$shop_item1/Label.text = topText[shop_item_num_one]
-	#$shop_item1/Label2.text = bottomText[shop_item_num_one]
+	var texture = load("res://art/weapons/"+picture[shop_item_num_one]+".png")
+	$shop_item1/shop_item1/Weapon.texture = texture
+	$shop_item1/shop_item1/Label.text = topText[shop_item_num_one]
+	$shop_item1/shop_item1/Label2.text = bottomText[shop_item_num_one]
+	
+	$focused_shop_item/focused_shop_item1/Weapon.texture = texture
+	$focused_shop_item/focused_shop_item1/Label.text = topText[shop_item_num_one]
+	$focused_shop_item/focused_shop_item1/Label2.text = bottomText[shop_item_num_one]
 	
 	var shop_item_num_two = randi_range(0, 10)
-	#var texture2 = load("res://"+picture[shop_item_num_two]+".png")
-	print(picture[shop_item_num_two] + ":" + str(shop_item_num_two))
-	#$shop_item2/shop_item2.texture = texture2
-	#$shop_item2/Label.text = topText[shop_item_num_two]
-	#$shop_item2/Label2.text = bottomText[shop_item_num_two]
+	while shop_item_num_two == shop_item_num_one:
+		shop_item_num_two = randi_range(0, 10)
+	var texture2 = load("res://art/weapons/"+picture[shop_item_num_two]+".png")
+	$shop_item2/shop_item2/Weapon.texture = texture2
+	$shop_item2/shop_item2/Label.text = topText[shop_item_num_two]
+	$shop_item2/shop_item2/Label2.text = bottomText[shop_item_num_two]
+	
+	$focused_shop_item/focused_shop_item2/Weapon.texture = texture2
+	$focused_shop_item/focused_shop_item2/Label.text = topText[shop_item_num_two]
+	$focused_shop_item/focused_shop_item2/Label2.text = bottomText[shop_item_num_two]
 	
 	var shop_item_num_three = randi_range(0, 10)
-	#var texture3 = load("res://"+picture[shop_item_num_three]+".png")
-	print(picture[shop_item_num_three] + ":" + str(shop_item_num_three))
-	#$shop_item3/shop_item3.texture = texture3
-	#$shop_item3/Label.text = topText[shop_item_num_three]
-	#$shop_item3/Label2.text = bottomText[shop_item_num_three]
+	while shop_item_num_three == shop_item_num_one || shop_item_num_three == shop_item_num_two :
+		shop_item_num_three = randi_range(0, 10)
+	var texture3 = load("res://art/weapons/"+picture[shop_item_num_three]+".png")
+	$shop_item3/shop_item3/Weapon.texture = texture3
+	$shop_item3/shop_item3/Label.text = topText[shop_item_num_three]
+	$shop_item3/shop_item3/Label2.text = bottomText[shop_item_num_three]
+	
+	$focused_shop_item/focused_shop_item3/Weapon.texture = texture3
+	$focused_shop_item/focused_shop_item3/Label.text = topText[shop_item_num_three]
+	$focused_shop_item/focused_shop_item3/Label2.text = bottomText[shop_item_num_three]
 
 
 func _on_shop_exit_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
