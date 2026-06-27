@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vmrwf0e6h2se" path="res://scenes/area_wheel_2d.gd" id="1_rnjyy"]
 [ext_resource type="Texture2D" uid="uid://b63s7oo6bnogl" path="res://art/wheel_outline.png" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://dbr2cvar1slqp" path="res://scenes/wheel_of_secondary.tscn" id="3_5vpl8"]
+[ext_resource type="Texture2D" uid="uid://ccg0p5b7jmbgg" path="res://art/indictator.png" id="4_o4qif"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rnjyy"]
 radius = 50.043385
@@ -22,6 +23,13 @@ texture = ExtResource("1_wtcfe")
 [node name="Wheel of Secondary3" parent="Area2D" unique_id=1703011057 instance=ExtResource("3_5vpl8")]
 
 [node name="Wheel of Secondary4" parent="Area2D" unique_id=236278036 instance=ExtResource("3_5vpl8")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D" unique_id=2042782432]
+position = Vector2(12.5, -12.5)
+
+[node name="Indictator" type="Sprite2D" parent="Area2D" unique_id=456369469]
+position = Vector2(19.5, -16.5)
+texture = ExtResource("4_o4qif")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=677330878]
 scale = Vector2(0.48, 0.48)

@@ -1,3 +1,4 @@
+class_name wheel_2d
 extends Area2D
 
 
@@ -7,6 +8,7 @@ var player = Player.new();
 var turn_queue_scene = preload("res://scenes/TurnQueue.tscn").instantiate()
 var turn = TurnQueue.new();
 var node_data: Array
+var win_loss := winloss.new()
 
 const NUM_ENEMIES = 2
 			
@@ -27,11 +29,7 @@ func _ready() -> void:
 
 	
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			
-			
+func on_area_2d_input_event():
 			var spin := Spin.new()
 			spin.attack_spin()
 			

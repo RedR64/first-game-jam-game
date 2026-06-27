@@ -26,7 +26,7 @@ func update_health_bar() -> void:
 		print("HUD ERROR: No player assigned.")
 		return
 	
-	var current_health = player.get("health")
+	var current_health = player.health
 	
 	if current_health == null:
 		print("HUD ERROR: Assigned node has no health.")
@@ -35,10 +35,10 @@ func update_health_bar() -> void:
 	health_bar.min_value = 0.0
 	health_bar.max_value = maximum_health
 	health_bar.value = float(current_health)
-	
-	print(
-		"HUD sees: ", player.name,
-		" | HP: ", current_health,
-		" | Bar value: ", health_bar.value,
-		" / ", health_bar.max_value
-	)
+	current_health = player.health
+	#print(
+	#	"HUD sees: ", player.name,
+	#	" | HP: ", current_health,
+	#	" | Bar value: ", health_bar.value,
+	#	" / ", health_bar.max_value
+	#)

@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://njodd6f4tn70" path="res://art/helpful_background.png" id="2_mhupv"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
 [ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/wheel_of_spin.tscn" id="3_27dai"]
-[ext_resource type="Script" uid="uid://q2dnhitct11x" path="res://scripts/winloss.gd" id="3_46hsx"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
 [ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
@@ -18,11 +17,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a13et"]
 size = Vector2(76, 25)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ogq8d"]
-radius = 25.079872
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkyx8"]
 size = Vector2(96, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogq8d"]
+radius = 25.079872
 
 [node name="combat_scene" type="Node2D" unique_id=488631277]
 script = ExtResource("1_rt46k")
@@ -67,6 +66,19 @@ scale = Vector2(0.6329114, 0.6329114)
 position = Vector2(-24.999985, -123)
 shape = SubResource("RectangleShape2D_a13et")
 
+[node name="shop_button" type="Sprite2D" parent="." unique_id=1933983502]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1, -16)
+texture = ExtResource("11_a13et")
+
+[node name="Shop Test" type="Area2D" parent="shop_button" unique_id=1830131635]
+position = Vector2(-189, 207)
+
+[node name="Shop Button" type="CollisionShape2D" parent="shop_button/Shop Test" unique_id=1646268389]
+position = Vector2(189, -207)
+shape = SubResource("RectangleShape2D_jkyx8")
+
 [node name="TurnQueue" parent="." unique_id=376869300 instance=ExtResource("11_rt46k")]
 
 [node name="player" parent="TurnQueue" unique_id=870248354 instance=ExtResource("4_sbngn")]
@@ -83,34 +95,12 @@ scale = Vector2(1, 1)
 position = Vector2(213, 194)
 shape = SubResource("CircleShape2D_ogq8d")
 
-[node name="winlosss" type="Node2D" parent="." unique_id=1868521457]
-position = Vector2(1, -16)
-script = ExtResource("3_46hsx")
-
-[node name="shop_button" type="Sprite2D" parent="winlosss" unique_id=1933983502]
-visible = false
-texture = ExtResource("11_a13et")
-
-[node name="Shop Test" type="Area2D" parent="winlosss/shop_button" unique_id=1830131635]
-position = Vector2(-189, 207)
-
-[node name="Shop Button" type="CollisionShape2D" parent="winlosss/shop_button/Shop Test" unique_id=1646268389]
-position = Vector2(189, -207)
-shape = SubResource("RectangleShape2D_jkyx8")
-
-[node name="Wheel of Spin" parent="winlosss" unique_id=602327553 instance=ExtResource("3_27dai")]
-position = Vector2(226, 83)
+[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
+position = Vector2(227, 67)
 scale = Vector2(1.52, 1.52)
 
-[node name="Area2D" parent="winlosss/Wheel of Spin" index="0" unique_id=980696271]
-script = null
+[connection signal="input_event" from="shop_button/Shop Test" to="." method="_on_shop_test_input_event"]
 
-[node name="CollisionShape2D" parent="winlosss/Wheel of Spin/Area2D" index="7" unique_id=677330878]
-visible = false
-
-[connection signal="input_event" from="winlosss/shop_button/Shop Test" to="." method="_on_shop_test_input_event"]
-[connection signal="input_event" from="winlosss/Wheel of Spin/Area2D" to="." method="_on_area_2d_input_event"]
-
-[editable path="winlosss/Wheel of Spin"]
-[editable path="winlosss/Wheel of Spin/Area2D/WheelofSecondary"]
-[editable path="winlosss/Wheel of Spin/Area2D/WheelofSecondary/Area2D/WheelOfSlice"]
+[editable path="Wheel of Spin"]
+[editable path="Wheel of Spin/Area2D/WheelofSecondary"]
+[editable path="Wheel of Spin/Area2D/WheelofSecondary/Area2D/WheelOfSlice"]

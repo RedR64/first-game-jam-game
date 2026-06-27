@@ -1,21 +1,27 @@
-extends Node2D
 class_name TurnQueue
+extends Node2D
 
 var comb := Combat.new()
+var win_loss :=winloss.new()
 
 # true = clicking the wheel makes the player attack
 # false = clicking the wheel makes the enemy attack
 var is_player_turn: bool = true
+var active_character
+var new_index
 
 
 func play_turn(player, npc) -> void:
+	win_loss.win()
 	# Stop combat if someone is already defeated.
 	if player.health <= 0:
 		print("Player has been defeated.")
+		win_loss.loss()
 		return
 
 	if npc.health <= 0:
 		print("Enemy has been defeated.")
+		win_loss.win()
 		return
 
 	if is_player_turn:
@@ -25,9 +31,9 @@ func play_turn(player, npc) -> void:
 		print("ENEMY TURN")
 		comb.attack(npc, player)
 		if player.health <= 0:
-			loss()
+			win_loss.loss()
 		elif npc.health <= 0:
-			return true
+			win_loss.win()
 		if new_index == get_child_count() -1:
 			new_index = 0
 			return
@@ -37,18 +43,6 @@ func play_turn(player, npc) -> void:
 			print("Completed turn, new character index: ", new_index, " | Active: ", active_character)
 	
 	
-	
-	
-func loss():
-	var next_scene = preload("res://main_menu.tscn").instantiate()
-	var current_scene = self
-	get_tree().root.add_child(next_scene)
-	get_tree().current_scene = next_scene
-	get_tree().root.remove_child(current_scene)
-	
-func win():
-	$shop_button.visible = true
-	$"Wheel of Spin/Area2D/CollisionShape2D".visible = false
 	
 
 
