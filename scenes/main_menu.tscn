@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://c3ivcme845aoh"]
 
 [ext_resource type="Script" uid="uid://dxtr14pnwehne" path="res://scenes/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://c656lif22brit" path="res://art/main menu.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dr7686msuijn7" path="res://art/main_menu_background.png" id="2_flqon"]
+[ext_resource type="Texture2D" uid="uid://cicvmrr8u7vda" path="res://art/settings_menu.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://ycv0i6fupo2f" path="res://art/title.png" id="3_rcqid"]
+[ext_resource type="Texture2D" uid="uid://dyvoudxgt0e0b" path="res://art/settings_button.png" id="4_1ajci"]
+[ext_resource type="Texture2D" uid="uid://dcc2x7mhvuf41" path="res://art/quit_button.png" id="5_7b55j"]
+[ext_resource type="Texture2D" uid="uid://b602dndk3l38p" path="res://art/play_button.png" id="6_5pajh"]
+[ext_resource type="Texture2D" uid="uid://brxc1bxyri2va" path="res://art/help_button.png" id="7_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://byl1c7ea2o413" path="res://art/flip_button.png" id="8_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://bksh4xdqdllai" path="res://art/accessories_button.png" id="9_hstxw"]
+[ext_resource type="Texture2D" uid="uid://daglqob03kdci" path="res://art/ferris_wheel_painting.png" id="10_8egab"]
+[ext_resource type="Texture2D" uid="uid://bush51ef0iyk2" path="res://art/your_boss_painting.png" id="11_gw5y6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogq8d"]
-size = Vector2(158, 40.75)
+size = Vector2(158, 40.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg0p3"]
 size = Vector2(142, 43)
@@ -21,12 +31,302 @@ size = Vector2(37, 41)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ln24"]
 size = Vector2(36, 43)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ogq8d"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtw2f"]
+size = Vector2(29, 30)
+
+[sub_resource type="Animation" id="Animation_svtp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("settings button:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit button:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("play button:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("help button:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("flip button:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("accessories button:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ferris wheel painting:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("your boss painting:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1dfpl"]
+resource_name = "flip"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("settings button:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit button:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("play button:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("help button:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("flip button:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("accessories button:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ferris wheel painting:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("your boss painting:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qywvv"]
+_data = {
+&"RESET": SubResource("Animation_svtp6"),
+&"flip": SubResource("Animation_1dfpl")
+}
+
 [node name="Main Menu" type="Node2D" unique_id=732754059]
 script = ExtResource("1_ekxnf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995912322]
+[node name="back_ground" type="Sprite2D" parent="." unique_id=1995912322]
 position = Vector2(-1, 1)
-texture = ExtResource("2_bqqt6")
+texture = ExtResource("2_flqon")
+
+[node name="title" type="Sprite2D" parent="." unique_id=1784154454]
+position = Vector2(-2, -84)
+texture = ExtResource("3_rcqid")
+region_enabled = true
+region_rect = Rect2(186.9624, 84.984825, 338.08392, 139.04697)
+
+[node name="settings button" type="Sprite2D" parent="." unique_id=483488073]
+position = Vector2(95, 97)
+texture = ExtResource("4_1ajci")
+region_enabled = true
+region_rect = Rect2(385, 315, 142, 41)
+
+[node name="quit button" type="Sprite2D" parent="." unique_id=288779534]
+position = Vector2(95, 155)
+texture = ExtResource("5_7b55j")
+region_enabled = true
+region_rect = Rect2(385, 373, 142, 43)
+
+[node name="play button" type="Sprite2D" parent="." unique_id=1084812398]
+position = Vector2(-95, 96)
+texture = ExtResource("6_5pajh")
+region_enabled = true
+region_rect = Rect2(187, 314, 158, 42)
+
+[node name="help button" type="Sprite2D" parent="." unique_id=1990464999]
+position = Vector2(189, 97)
+texture = ExtResource("7_j7ex8")
+region_enabled = true
+region_rect = Rect2(532, 315, 37, 41)
+
+[node name="flip button" type="Sprite2D" parent="." unique_id=1400767415]
+position = Vector2(189, 155)
+texture = ExtResource("8_a8gd2")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(532, 373, 36, 43)
+
+[node name="accessories button" type="Sprite2D" parent="." unique_id=855550980]
+position = Vector2(-95, 156)
+texture = ExtResource("9_hstxw")
+region_enabled = true
+region_rect = Rect2(187, 373, 158, 43)
+
+[node name="ferris wheel painting" type="Sprite2D" parent="." unique_id=283984698]
+position = Vector2(-271, -108)
+texture = ExtResource("10_8egab")
+region_enabled = true
+region_rect = Rect2(50.2181, 101.5757, 80.57815, 58.411743)
+
+[node name="your boss painting" type="Sprite2D" parent="." unique_id=271770940]
+position = Vector2(240, -139)
+texture = ExtResource("11_gw5y6")
+region_enabled = true
+region_rect = Rect2(563.5451, 50.704407, 75.366394, 98.42944)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=296122127]
 position = Vector2(0, 1)
@@ -74,9 +374,77 @@ position = Vector2(-188, 191)
 position = Vector2(377, -35.5)
 shape = SubResource("RectangleShape2D_8ln24")
 
+[node name="Label" type="Label" parent="." unique_id=1914464324]
+visible = false
+offset_left = 173.0
+offset_top = 6.0
+offset_right = 344.0
+offset_bottom = 55.0
+text = "This would be a help menu... good luck!"
+label_settings = SubResource("LabelSettings_ogq8d")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=2092516209]
+visible = false
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 212.0
+offset_bottom = 77.0
+text = "There are no settings..."
+label_settings = SubResource("LabelSettings_ogq8d")
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="." unique_id=1862526427]
+visible = false
+offset_left = -63.0
+offset_top = 19.0
+offset_right = 103.0
+offset_bottom = 68.0
+text = "Coming Soon™
+"
+label_settings = SubResource("LabelSettings_ogq8d")
+autowrap_mode = 2
+
+[node name="Settings2" type="Sprite2D" parent="." unique_id=238848497]
+visible = false
+position = Vector2(-1, 1)
+texture = ExtResource("3_bqqt6")
+
+[node name="Master Slider" type="HSlider" parent="Settings2" unique_id=552625153]
+offset_left = -60.0
+offset_top = -53.0
+offset_right = 167.0
+offset_bottom = -37.0
+value = 50.0
+
+[node name="Music Slider" type="HSlider" parent="Settings2" unique_id=702966763]
+offset_left = -60.0
+offset_top = -32.0
+offset_right = 167.0
+offset_bottom = -16.0
+value = 50.0
+
+[node name="Other Slider" type="HSlider" parent="Settings2" unique_id=1607977281]
+offset_left = -60.0
+offset_top = -5.0
+offset_right = 167.0
+offset_bottom = 11.0
+value = 50.0
+
+[node name="Settings Exit" type="Area2D" parent="Settings2" unique_id=1173486665]
+position = Vector2(-187, 190)
+
+[node name="Settings Exit Button" type="CollisionShape2D" parent="Settings2/Settings Exit" unique_id=1560211708]
+position = Vector2(367.5, -324)
+shape = SubResource("RectangleShape2D_rtw2f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1820516527]
+libraries/ = SubResource("AnimationLibrary_qywvv")
+
 [connection signal="input_event" from="Play" to="." method="_on_play_input_event"]
 [connection signal="input_event" from="Quit" to="." method="_on_quit_input_event"]
 [connection signal="input_event" from="Accessories" to="." method="_on_accessories_input_event"]
 [connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
 [connection signal="input_event" from="Help" to="." method="_on_help_input_event"]
 [connection signal="input_event" from="Flip" to="." method="_on_flip_input_event"]
+[connection signal="input_event" from="Settings2/Settings Exit" to="." method="_on_settings_exit_input_event"]

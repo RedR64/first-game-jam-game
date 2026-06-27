@@ -20,6 +20,11 @@ func _on_settings_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 	if event.is_action_pressed("left_click"):
 		settings()
 
+func _on_settings_exit_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("left_click"):
+		$Settings2.visible = false
+
+
 
 func _on_help_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_click"):
@@ -47,12 +52,18 @@ func quit():
 	
 func accessories():
 	print("Coming Soon™")
+	$Label3.visible = true
+	await get_tree().create_timer(2.0).timeout
+	$Label3.visible = false
 	
 func settings():
-	print("Coming Soon™")
+	$Settings2.visible = true
 
 func help():
 	print("Coming Soon™")
+	$Label.visible = true
+	await get_tree().create_timer(3.0).timeout
+	$Label.visible = false
 	
 func flip():
-	print("Coming Soon™")
+	$AnimationPlayer.play("flip")
