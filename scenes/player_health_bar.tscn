@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnh6gtdn2eg3v"]
 
+[ext_resource type="Script" uid="uid://by83x6f5iwyuj" path="res://scenes/player_health_bar.gd" id="1_38th7"]
 [ext_resource type="Texture2D" uid="uid://cokbk25rwx7ig" path="res://art/player_health_bar.png" id="1_axbfd"]
 [ext_resource type="Texture2D" uid="uid://dqiqhmqq1vb2b" path="res://art/mainProtaganist.png" id="2_oil0j"]
 [ext_resource type="Texture2D" uid="uid://c186p2t8jjgqj" path="res://art/empty health bar.png" id="3_04gef"]
@@ -15,6 +16,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="Player Health Bar" type="Node2D" unique_id=1006379482]
 scale = Vector2(0.25, 0.25)
+script = ExtResource("1_38th7")
 
 [node name="MainProtaganist" type="Sprite2D" parent="." unique_id=1953092760]
 z_index = 10
@@ -28,13 +30,13 @@ position = Vector2(-0.8281555, -3.3126295)
 scale = Vector2(0.20703934, 0.20703934)
 texture = ExtResource("1_axbfd")
 
-[node name="Health Bar" type="TextureProgressBar" parent="." unique_id=142638204]
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=142638204]
 offset_left = -275.9999
 offset_top = -155.99998
 offset_right = 924.0001
 offset_bottom = 144.00002
 rotation = -0.0005527867
-fill_mode = 1
+value = 100.0
 texture_under = ExtResource("3_04gef")
 texture_over = ExtResource("4_38th7")
 texture_progress = ExtResource("5_ktmho")
@@ -43,7 +45,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Shield Bar" type="TextureProgressBar" parent="." unique_id=704568194]
 anchors_preset = -1
 anchor_left = 0.24999997
-anchor_top = 0.00055278616
+anchor_top = 0.00055277505
+anchor_right = 0.24999997
 anchor_bottom = 0.00055277505
 offset_left = -280.0
 offset_top = -160.0

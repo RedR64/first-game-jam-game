@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bun81aht40sqc" path="res://scenes/office_background.gd" id="1_rt46k"]
 [ext_resource type="Texture2D" uid="uid://njodd6f4tn70" path="res://art/helpful_background.png" id="2_mhupv"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
-[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/wheel_of_spin.tscn" id="3_27dai"]
+[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
 [ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
@@ -36,6 +36,15 @@ texture = ExtResource("2_mhupv")
 position = Vector2(-261, 101.99999)
 scale = Vector2(8.328, 8.328)
 
+[node name="player" parent="." unique_id=1977316316 instance=ExtResource("4_sbngn")]
+position = Vector2(-138, 46)
+scale = Vector2(1, 1)
+script = null
+
+[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
+position = Vector2(221, 70)
+scale = Vector2(8, 8)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
 position = Vector2(0, 1)
 zoom = Vector2(1.605, 1.345)
@@ -44,10 +53,9 @@ zoom = Vector2(1.605, 1.345)
 position = Vector2(172, -148)
 scale = Vector2(0.15, 0.15)
 
-[node name="Player Health Bar" parent="." unique_id=1072751849 instance=ExtResource("7_mhupv")]
+[node name="Node2D3" parent="." unique_id=1072751849 instance=ExtResource("7_mhupv")]
 position = Vector2(-170, -149)
 scale = Vector2(0.15, 0.15)
-player_path = NodePath("../TurnQueue/player")
 
 [node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_6wruh")]
 position = Vector2(200, -95)
@@ -67,8 +75,6 @@ position = Vector2(-24.999985, -123)
 shape = SubResource("RectangleShape2D_a13et")
 
 [node name="shop_button" type="Sprite2D" parent="." unique_id=1933983502]
-unique_name_in_owner = true
-visible = false
 position = Vector2(1, -16)
 texture = ExtResource("11_a13et")
 
@@ -79,11 +85,15 @@ position = Vector2(-189, 207)
 position = Vector2(189, -207)
 shape = SubResource("RectangleShape2D_jkyx8")
 
-[node name="TurnQueue" parent="." unique_id=376869300 instance=ExtResource("11_rt46k")]
+[node name="TurnQueue" parent="." unique_id=376869300 node_paths=PackedStringArray("player", "enemies", "attack_button") instance=ExtResource("11_rt46k")]
+player = NodePath("player")
+enemies = [NodePath("enemy")]
+attack_button = NodePath("../atk_button/atk_button")
 
 [node name="player" parent="TurnQueue" unique_id=870248354 instance=ExtResource("4_sbngn")]
 position = Vector2(-138, 46)
 scale = Vector2(1, 1)
+script = null
 
 [node name="enemy" parent="TurnQueue" unique_id=1240282853 instance=ExtResource("9_es6e5")]
 position = Vector2(132, 48)
@@ -95,12 +105,4 @@ scale = Vector2(1, 1)
 position = Vector2(213, 194)
 shape = SubResource("CircleShape2D_ogq8d")
 
-[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
-position = Vector2(227, 67)
-scale = Vector2(1.52, 1.52)
-
 [connection signal="input_event" from="shop_button/Shop Test" to="." method="_on_shop_test_input_event"]
-
-[editable path="Wheel of Spin"]
-[editable path="Wheel of Spin/Area2D/WheelofSecondary"]
-[editable path="Wheel of Spin/Area2D/WheelofSecondary/Area2D/WheelOfSlice"]
