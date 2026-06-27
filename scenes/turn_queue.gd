@@ -82,7 +82,10 @@ func play_turn(player: CharacterBody2D, npc: CharacterBody2D): # The state, (0 t
 		
 		
 		comb.attack(npc, player)
-		
+		if player.health <= 0:
+			loss()
+		elif npc.health <= 0:
+			return true
 		if new_index == get_child_count() -1:
 			new_index = 0
 			return
@@ -94,8 +97,16 @@ func play_turn(player: CharacterBody2D, npc: CharacterBody2D): # The state, (0 t
 	
 	
 	
+func loss():
+	var next_scene = preload("res://main_menu.tscn").instantiate()
+	var current_scene = self
+	get_tree().root.add_child(next_scene)
+	get_tree().current_scene = next_scene
+	get_tree().root.remove_child(current_scene)
 	
-	
+func win():
+	$shop_button.visible = true
+	$"Wheel of Spin/Area2D/CollisionShape2D".visible = false
 	
 
 
