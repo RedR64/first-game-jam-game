@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dbr2cvar1slqp"]
+
+[ext_resource type="Texture2D" uid="uid://b63s7oo6bnogl" path="res://art/wheel_outline.png" id="2_3oi1t"]
+[ext_resource type="PackedScene" uid="uid://lpumh0h12u88" path="res://scenes/wheel_of_slice.tscn" id="3_3oi1t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnjyy"]
+radius = 50.043385
+
+[node name="Wheel of Spin" type="Node2D" unique_id=602327553]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=980696271]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=16724669]
+texture = ExtResource("2_3oi1t")
+
+[node name="WheelOfSlice" parent="Area2D" unique_id=1486047418 instance=ExtResource("3_3oi1t")]
+
+[node name="WheelOfSlice2" parent="Area2D" unique_id=1930986718 instance=ExtResource("3_3oi1t")]
+rotation = 1.5707964
+
+[node name="WheelOfSlice3" parent="Area2D" unique_id=945133196 instance=ExtResource("3_3oi1t")]
+rotation = 3.1415927
+
+[node name="WheelOfSlice4" parent="Area2D" unique_id=405673260 instance=ExtResource("3_3oi1t")]
+rotation = 4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=677330878]
+visible = false
+scale = Vector2(0.48, 0.48)
+shape = SubResource("CircleShape2D_rnjyy")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bun81aht40sqc" path="res://scenes/office_background.gd" id="1_rt46k"]
 [ext_resource type="Texture2D" uid="uid://njodd6f4tn70" path="res://art/helpful_background.png" id="2_mhupv"]
 [ext_resource type="PackedScene" uid="uid://faylk7opc2la" path="res://scenes/game_background.tscn" id="2_vrc0d"]
-[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/node_2d.tscn" id="3_27dai"]
+[ext_resource type="PackedScene" uid="uid://b0qderlc7v00a" path="res://scenes/wheel_of_spin.tscn" id="3_27dai"]
 [ext_resource type="PackedScene" uid="uid://dykn6aruo5t2d" path="res://scenes/player.tscn" id="4_sbngn"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_6wruh"]
 [ext_resource type="PackedScene" uid="uid://bx026h02fh7ov" path="res://scenes/enemy_health_bar.tscn" id="6_cyggf"]
@@ -41,10 +41,6 @@ position = Vector2(-138, 46)
 scale = Vector2(1, 1)
 script = null
 
-[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
-position = Vector2(221, 70)
-scale = Vector2(8, 8)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1334982877]
 position = Vector2(0, 1)
 zoom = Vector2(1.605, 1.345)
@@ -75,6 +71,7 @@ position = Vector2(-24.999985, -123)
 shape = SubResource("RectangleShape2D_a13et")
 
 [node name="shop_button" type="Sprite2D" parent="." unique_id=1933983502]
+visible = false
 position = Vector2(1, -16)
 texture = ExtResource("11_a13et")
 
@@ -101,5 +98,9 @@ scale = Vector2(1, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanical Pencil Sharpener" unique_id=250979882]
 position = Vector2(213, 194)
 shape = SubResource("CircleShape2D_ogq8d")
+
+[node name="Wheel of Spin" parent="." unique_id=602327553 instance=ExtResource("3_27dai")]
+position = Vector2(227, 67)
+scale = Vector2(1.52, 1.52)
 
 [connection signal="input_event" from="shop_button/Shop Test" to="." method="_on_shop_test_input_event"]

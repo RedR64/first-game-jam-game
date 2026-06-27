@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://lpumh0h12u88"]
+
+[ext_resource type="Texture2D" uid="uid://b63s7oo6bnogl" path="res://art/wheel_outline.png" id="2_k0m6n"]
+[ext_resource type="Texture2D" uid="uid://c6128bv5ero7n" path="res://art/health_wheel.png" id="2_w0hdc"]
+[ext_resource type="Texture2D" uid="uid://0c2mandx8ps8" path="res://art/wheel_fourth.png" id="4_lanov"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ogq8d"]
+font_size = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnjyy"]
+radius = 17.391304
+
+[node name="WheelOfSlice" type="Node2D" unique_id=602327553]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=980696271]
+
+[node name="health_wheel" type="Sprite2D" parent="Area2D" unique_id=1003989567]
+position = Vector2(12.5, -12.5)
+texture = ExtResource("2_w0hdc")
+region_enabled = true
+region_rect = Rect2(25, 0, 24, 24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=16724669]
+position = Vector2(12, -12)
+texture = ExtResource("2_k0m6n")
+region_enabled = true
+region_rect = Rect2(24, 0, 25, 25)
+
+[node name="lines" type="Sprite2D" parent="Area2D" unique_id=524234883]
+position = Vector2(12, -12)
+texture = ExtResource("4_lanov")
+region_enabled = true
+region_rect = Rect2(24, 0, 25, 25)
+
+[node name="slice2" type="Label" parent="Area2D" unique_id=1955932128]
+offset_top = -4.0
+offset_right = 20.0
+offset_bottom = 3.0
+rotation = 5.497787
+text = "TEMPLATE"
+label_settings = SubResource("LabelSettings_ogq8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=677330878]
+visible = false
+scale = Vector2(1.38, 1.38)
+shape = SubResource("CircleShape2D_rnjyy")

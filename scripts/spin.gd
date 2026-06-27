@@ -28,6 +28,7 @@ var agility: float
 var saving_throw: float
 var currency_multiplier: float
 
+
 #func get_health() -> float;
 
 
@@ -42,7 +43,6 @@ func _init() -> void:
 	agility = .10
 	saving_throw = .50
 	currency_multiplier = 1.0
-	
 	
 	
 func spin() -> Spin:

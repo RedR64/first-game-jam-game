@@ -64,7 +64,7 @@ func battle(player: CharacterBody2D, npc: CharacterBody2D): # Could return a cha
 			attack(npc, player)
 		else:
 			attack(player, npc)
-		
+		i += 1
 		print("Stats this turn")
 		print("Player health: ", player.health, " | NPC health: ", npc.health)
 		# Move/turn
