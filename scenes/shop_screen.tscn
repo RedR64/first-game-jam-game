@@ -5,10 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://d12714e7frsr2" path="res://art/shopItem.png" id="2_dxhqa"]
 [ext_resource type="Texture2D" uid="uid://d1qw0wossjpd5" path="res://art/better_office_background.png" id="3_y22eq"]
 [ext_resource type="PackedScene" uid="uid://c5lwn5rcojm4i" path="res://scenes/currency.tscn" id="5_dxhqa"]
-[ext_resource type="Texture2D" uid="uid://c2mb8jjkusdym" path="res://art/atk_button.png" id="6_nrk2k"]
+[ext_resource type="PackedScene" uid="uid://dp73vqhsndieq" path="res://scenes/ShopItem.tscn" id="7_rutho"]
+[ext_resource type="Texture2D" uid="uid://btxul3vtiwmp0" path="res://art/return_button.png" id="7_t4u6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l06h2"]
+size = Vector2(148.51996, 85.32001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogq8d"]
-size = Vector2(76, 26)
+size = Vector2(151.68002, 50.560005)
 
 [node name="ShopScreen" type="Node2D" unique_id=319007045]
 script = ExtResource("1_rutho")
@@ -26,42 +30,93 @@ position = Vector2(169, 17)
 scale = Vector2(3.255, 3.255)
 texture = ExtResource("1_h3yqb")
 
-[node name="shop_item" type="Sprite2D" parent="." unique_id=1991608575]
+[node name="shop_item3" type="Sprite2D" parent="." unique_id=1991608575]
 position = Vector2(-176, 45)
 texture = ExtResource("2_dxhqa")
+
+[node name="shop_item3" parent="shop_item3" unique_id=1734996628 instance=ExtResource("7_rutho")]
+position = Vector2(-1, 1)
+
+[node name="shop_button3" type="Area2D" parent="shop_item3/shop_item3" unique_id=1254127744]
+position = Vector2(114.92405, -195.29114)
+scale = Vector2(0.6329114, 0.6329114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_item3/shop_item3/shop_button3" unique_id=296761878]
+position = Vector2(-180.00002, 306.98)
+shape = SubResource("RectangleShape2D_l06h2")
 
 [node name="shop_item2" type="Sprite2D" parent="." unique_id=2025937154]
 position = Vector2(-176, -20)
 texture = ExtResource("2_dxhqa")
 flip_v = true
 
-[node name="shop_item3" type="Sprite2D" parent="." unique_id=1249234643]
+[node name="shop_item2" parent="shop_item2" unique_id=769786136 instance=ExtResource("7_rutho")]
+position = Vector2(-1, 5)
+
+[node name="shop_button2" type="Area2D" parent="shop_item2/shop_item2" unique_id=1186525081]
+position = Vector2(114.92405, -134.29114)
+scale = Vector2(0.6329114, 0.6329114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_item2/shop_item2/shop_button2" unique_id=548627764]
+position = Vector2(-180.00002, 204.28)
+shape = SubResource("RectangleShape2D_l06h2")
+
+[node name="shop_item1" type="Sprite2D" parent="." unique_id=1249234643]
 position = Vector2(-176, -86)
 texture = ExtResource("2_dxhqa")
 flip_h = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830918220]
-visible = false
-texture = ExtResource("3_y22eq")
+[node name="shop_item1" parent="shop_item1" unique_id=1647713273 instance=ExtResource("7_rutho")]
+position = Vector2(-1, 0)
 
-[node name="shop_item4" type="Sprite2D" parent="." unique_id=1100781770]
+[node name="shop_button" type="Area2D" parent="shop_item1" unique_id=6073469]
+position = Vector2(113.92405, -63.291138)
+scale = Vector2(0.6329114, 0.6329114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_item1/shop_button" unique_id=592769026]
+position = Vector2(-180.00002, 100)
+shape = SubResource("RectangleShape2D_l06h2")
+
+[node name="focused_shop_item" type="Sprite2D" parent="." unique_id=1100781770]
 position = Vector2(1, -122)
 scale = Vector2(1.415, 1.415)
 texture = ExtResource("2_dxhqa")
+
+[node name="focused_shop_item1" parent="focused_shop_item" unique_id=1187817310 instance=ExtResource("7_rutho")]
+visible = false
+position = Vector2(-1, 0)
+
+[node name="focused_shop_item2" parent="focused_shop_item" unique_id=831540327 instance=ExtResource("7_rutho")]
+visible = false
+position = Vector2(-1, 0)
+
+[node name="focused_shop_item3" parent="focused_shop_item" unique_id=797819303 instance=ExtResource("7_rutho")]
+visible = false
+position = Vector2(-1, 0)
 
 [node name="Node2D" parent="." unique_id=1006379482 instance=ExtResource("5_dxhqa")]
 position = Vector2(172.00002, -129)
 scale = Vector2(1.75, 1.75)
 
 [node name="atk_button" type="Sprite2D" parent="." unique_id=1021097666]
-position = Vector2(-180, 100)
-scale = Vector2(1.58, 1.58)
-texture = ExtResource("6_nrk2k")
+position = Vector2(-175, 95)
+texture = ExtResource("7_t4u6q")
 
-[node name="Shop Exit" type="Area2D" parent="." unique_id=166260493]
+[node name="Shop Exit" type="Area2D" parent="atk_button" unique_id=166260493]
+position = Vector2(113.92405, -63.291138)
+scale = Vector2(0.6329114, 0.6329114)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop Exit" unique_id=828307571]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atk_button/Shop Exit" unique_id=828307571]
 position = Vector2(-180, 100)
 shape = SubResource("RectangleShape2D_ogq8d")
 
-[connection signal="input_event" from="Shop Exit" to="." method="_on_shop_exit_input_event"]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830918220]
+visible = false
+texture = ExtResource("3_y22eq")
+
+[connection signal="input_event" from="shop_item3/shop_item3/shop_button3" to="." method="_on_shop_button_3_input_event"]
+[connection signal="input_event" from="shop_item2/shop_item2/shop_button2" to="." method="_on_shop_button_2_input_event"]
+[connection signal="input_event" from="shop_item1/shop_button" to="." method="_on_shop_button_input_event"]
+[connection signal="input_event" from="atk_button/Shop Exit" to="." method="_on_shop_exit_input_event"]
+
+[editable path="shop_item1/shop_item1"]

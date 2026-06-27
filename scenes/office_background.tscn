@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bhgsu2cjfen80" path="res://art/shop_button.png" id="11_a13et"]
 [ext_resource type="PackedScene" uid="uid://ppmout52lt7l" path="res://scenes/TurnQueue.tscn" id="11_rt46k"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a13et"]
+size = Vector2(76, 25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkyx8"]
 size = Vector2(96, 32)
 
@@ -63,8 +66,15 @@ position = Vector2(-213, 68)
 scale = Vector2(1.58, 1.58)
 texture = ExtResource("10_jkyx8")
 
+[node name="atk_button" type="Area2D" parent="atk_button" unique_id=1529777998]
+position = Vector2(15.822777, 77.8481)
+scale = Vector2(0.6329114, 0.6329114)
+
+[node name="Atk Button" type="CollisionShape2D" parent="atk_button/atk_button" unique_id=678230390]
+position = Vector2(-24.999985, -123)
+shape = SubResource("RectangleShape2D_a13et")
+
 [node name="shop_button" type="Sprite2D" parent="." unique_id=1933983502]
-visible = false
 position = Vector2(1, -16)
 texture = ExtResource("11_a13et")
 

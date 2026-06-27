@@ -24,7 +24,6 @@ texture = ExtResource("2_oil0j")
 vframes = 2
 
 [node name="pic_bar" type="Sprite2D" parent="MainProtaganist" unique_id=2068303661]
-z_index = 10
 position = Vector2(-0.8281555, -3.3126295)
 scale = Vector2(0.20703934, 0.20703934)
 texture = ExtResource("1_axbfd")
