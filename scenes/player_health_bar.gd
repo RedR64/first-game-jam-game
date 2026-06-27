@@ -22,14 +22,23 @@ func _process(_delta: float) -> void:
 
 
 func update_health_bar() -> void:
+	if player == null:
+		print("HUD ERROR: No player assigned.")
+		return
+	
 	var current_health = player.get("health")
 	
 	if current_health == null:
-		push_warning("The assigned player node does not have a health variable.")
+		print("HUD ERROR: Assigned node has no health.")
 		return
 	
-	health_bar.value = clampf(
-		float(current_health),
-		health_bar.min_value,
-		health_bar.max_value
+	health_bar.min_value = 0.0
+	health_bar.max_value = maximum_health
+	health_bar.value = float(current_health)
+	
+	print(
+		"HUD sees: ", player.name,
+		" | HP: ", current_health,
+		" | Bar value: ", health_bar.value,
+		" / ", health_bar.max_value
 	)
